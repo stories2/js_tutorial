@@ -167,3 +167,38 @@ console.log(`parseFloat('123.4') = ${parseFloat('123.4')} type ${typeof parseFlo
 console.log(`String(123.4) = ${String(123.4)} type ${typeof String(123.4)}`);
 console.log(`123.4.toString() = ${123.4.toString()} type ${typeof 123.4.toString()}`);
 console.log(`\`123.4\` = ${`${123.4}`} type ${typeof `${123.4}`}`);
+
+
+const valve = {
+    open: function() {
+        console.log('valve open');
+    },
+    close: function() {
+        console.log('valve close');
+    }
+}
+console.log('valve', valve);
+
+const gasRange = Object.create(valve);
+gasRange.fire = 'max';
+gasRange.gas = 40;
+gasRange.controlGas = function() {
+    console.log('change gas power', this.fire);
+}
+gasRange.startFire = function() {
+    console.log('start fire');
+}
+console.log('gasRange', gasRange);
+
+const aFishShapedBun = Object.create(gasRange);
+aFishShapedBun.shape = 'Fish';
+aFishShapedBun.redBean = 'Little';
+
+aFishShapedBun.cooking = function() {
+    console.log('cooking fish shaped bread')
+}
+aFishShapedBun.flip = function() {
+    console.log('flip fish shaped bread')
+}
+
+console.log('aFishShapedBun', aFishShapedBun);
