@@ -1,5 +1,4 @@
 # js_tutorial
-letuin
 
 1
 https://docs.google.com/file/d/12sKjOSG7WsT0ybZwDc41k12YiJzoHB4p/edit?usp=docslist_api&filetype=mspresentation
