@@ -1,5 +1,3 @@
-
-
 const nodes = document.querySelectorAll('div')[0].querySelectorAll('span')
 
 const mapNum = [
@@ -44,24 +42,45 @@ function draw() {
 }
 
 function left() {
-    if (x < 0) {
+    if (x < 0 || mapNum[y][x - 1] == 0) {
         return
     }
     x --;
     draw()
 }
 
-function right() {
+//left()
 
+function right() {
+		if (x >= 4 || mapNum[y][x + 1] == 0) {
+    		return
+    }
+    x ++;
+    draw();
 }
 
-function up() {
+//right()
 
+function up() {
+	if (y < 0 || mapNum[y - 1][x] == 0) {
+  	return
+  }
+  y --;
+  draw()
 }
 
 function down() {
-
+	if(y >= 4 || mapNum[y + 1][x] == 0) {
+  	return 
+  }
+  y ++
+  draw()
 }
+
+window.addEventListener('keydown', (e) => {
+console.log('e', e)
+})
+
 
 function isGoal() {
     if (mapNum[y][x] === 3) {
